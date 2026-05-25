@@ -1,22 +1,23 @@
 package com.livrotech.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 public class BookRequestDTO {
 
     @NotBlank(message = "Título é obrigatório")
-    @
     private String titulo;
 
     @NotBlank(message = "Autor é obrigatório")
     private String autor;
 
     @Positive(message = "Preço deve ser maior que zero")
+    @NotNull(message = "Preço obrigatório")
     private Double preco;
 
-    public BookRequestDTO() {
-    }
+    public BookRequestDTO() {}
 
     public String getTitulo() {
         return titulo;
